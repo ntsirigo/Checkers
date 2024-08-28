@@ -159,16 +159,16 @@ public class Move {
             board.board[endRow][endColumn - 1] = startingPiece;
 
             // Set the starting piece value to 0
-            board.board[startRow][startColumn - 1] = new Piece("■", 0);
+            board.board[startRow][startColumn - 1] = new Piece("", 0);
 
             // If taking a piece for white
             if (takePiece && endRow > startRow) {
-                board.board[startRow + 1][startColumn - 2] = new Piece("■", 0);
+                board.board[startRow + 1][startColumn - 2] = new Piece("", 0);
             } 
 
             // If taking a piece for black
             else if (takePiece && endRow < startRow) {
-                board.board[startRow - 1][startColumn - 2] = new Piece("■", 0);
+                board.board[startRow - 1][startColumn - 2] = new Piece("", 0);
             }
 
             // Check if the piece will become a king
@@ -184,16 +184,16 @@ public class Move {
             board.board[endRow][endColumn - 1] = startingPiece;
 
             // Set the starting piece value to 0
-            board.board[startRow][startColumn - 1] = new Piece("■", 0);
+            board.board[startRow][startColumn - 1] = new Piece("", 0);
 
             // If taking a piece for white
             if (takePiece && endRow > startRow) {
-                board.board[startRow + 1][startColumn] = new Piece("■", 0);
+                board.board[startRow + 1][startColumn] = new Piece("", 0);
             }
 
             // If taking a piece for black
             else if (takePiece && endRow < startRow) {
-                board.board[startRow - 1][startColumn] = new Piece("■", 0);
+                board.board[startRow - 1][startColumn] = new Piece("", 0);
             }
 
             // Check if the piece will become a king

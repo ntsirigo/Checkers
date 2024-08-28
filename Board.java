@@ -15,7 +15,7 @@ public class Board {
     private void fillBase() {
         for (int i = 0; i < board.length; i++) {
             for (int j = 0; j < board[i].length; j++) {
-                board[i][j] = new Piece("■", 0);
+                board[i][j] = new Piece("", 0);
                 if (j % 2 == 0) {
                     if (i % 2 == 0) {
                         board[i][j].placeholder = " ";
@@ -57,6 +57,20 @@ public class Board {
                 }
             }
         }
+    }
+
+    public boolean hasLost(int player) {
+        // Ελέγχουμε αν δεν υπάρχουν διαθέσιμα κομμάτια για τον παίκτη
+        for (int i = 0; i < 8; i++) {
+            for (int j = 0; j < 8; j++) {
+                if (board[i][j].value == player) {
+                    // Υπάρχει τουλάχιστον ένα κομμάτι του παίκτη
+                    return false;
+                }
+            }
+        }
+        // Δεν υπάρχουν κομμάτια του παίκτη
+        return true;
     }
 
     // Print the board
